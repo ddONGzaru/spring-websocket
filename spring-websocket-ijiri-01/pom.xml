@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- ===== Project Description ===== -->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.zaru</groupId>
+	<artifactId>spring.websocket</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+  
+	<!-- ===== Dependencies DESCRIPTION ===== -->  
+	
+	<!-- :::::::::: Compile Dependency :::::::::: -->
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+	</dependencies>
+		
+	
+	<!-- ===== Properties Description ===== -->	
+	<properties>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<spring.version>4.0.3.RELEASE</spring.version>
+ 	</properties>
+
+	
+	<!-- ===== Build Description ===== -->
+	<build>
+		
+		<!-- finalName은 war, jar파일 생성 phase를 실행시 war, jar파일의 이름이 됨 -->
+		<finalName>pg7</finalName>
+
+		<!-- 소스 코드의 루프 패스를 지정 --> 
+	  	<sourceDirectory>${basedir}/src</sourceDirectory>
+	  	
+	  	<!-- 테스트 소스 코드의 루프 패스를 지정 -->
+	  	<testSourceDirectory>${basedir}/test</testSourceDirectory>
+	  	
+	  	<!-- 빌드된 소스의 저장 패스를 지정 -->
+	  	<outputDirectory>${basedir}/target/classes</outputDirectory>
+	  	
+	  	<!-- 빌드된 테스트 소스의 저장 패스를 지정 -->
+	  	<testOutputDirectory>${basedir}/target/test-classes</testOutputDirectory>
+		
+		<!-- 소스 이외의 리소스 파일들의 루프 패스를 지정 --> 
+	  	<resources>
+	  		<resource>
+	  			<directory>${basedir}/src</directory>
+	  			<excludes>
+	  				<exclude>**/*.java</exclude>
+	  			</excludes>
+	  		</resource>
+	  	</resources>
+
+		<!-- 소스 이외의 테스트 리소스 파일들의 루프 패스를 지정 -->
+	  	<testResources>
+	  		<testResource>
+	  			<directory>${basedir}/test</directory>
+	  			<excludes>
+	  				<exclude>**/*.java</exclude>
+	  			</excludes>
+	  		</testResource>
+	  		<testResource>
+	  			<directory>${basedir}/test/resource</directory>
+	  			<excludes>
+	  				<exclude>**/*.java</exclude>
+	  			</excludes>
+	  		</testResource>
+	  	</testResources>
+		
+		<!-- plug-in 관련 설정 -->
+		<plugins>
+		
+			<!-- :::::::::: war-plugin :::::::::: -->
+			<plugin>
+	  			<groupId>org.apache.maven.plugins</groupId>
+	  			<artifactId>maven-war-plugin</artifactId>
+	  			<version>2.4</version>
+	  			<configuration>
+	  				<warSourceDirectory>WebContent</warSourceDirectory>
+	  				<webXml>WebContent/WEB-INF/web.xml</webXml>
+	  				<!-- 
+	  				<warSourceExcludes>WEB-INF/views/license/**</warSourceExcludes>
+	  				 -->
+	  			</configuration>
+			</plugin>
+	  		
+	  		<!-- :::::::::: compiler-plugin :::::::::: -->
+	  		<plugin>
+	    		<groupId>org.apache.maven.plugins</groupId>
+	    		<artifactId>maven-compiler-plugin</artifactId>
+	    		<version>3.1</version>
+	    		<configuration>
+	    			<source>1.7</source>
+	    			<target>1.7</target>
+	    			<encoding>UTF-8</encoding>
+	    			
+	    			<!-- 
+	    			<excludes>
+			           	<exclude>**/common/**/License*.java</exclude>			           	
+					</excludes>
+					 -->
+	    		</configuration>
+	    	</plugin>
+			
+		</plugins>		
+		
+	</build>  
+	
+</project>
