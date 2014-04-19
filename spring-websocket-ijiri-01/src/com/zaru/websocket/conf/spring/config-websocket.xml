@@ -25,6 +25,7 @@
 	
     <websocket:handlers>
         <websocket:mapping path="/echo" handler="echoHandler"/>
+        <websocket:mapping path="/event" handler="eventHandler"/>
     </websocket:handlers>
 
 	<mvc:annotation-driven/>													
