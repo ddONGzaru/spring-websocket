@@ -17,7 +17,12 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
 	</dependencies>
 		
 	
@@ -33,7 +38,7 @@
 	<build>
 		
 		<!-- finalName은 war, jar파일 생성 phase를 실행시 war, jar파일의 이름이 됨 -->
-		<finalName>pg7</finalName>
+		<finalName>zaru</finalName>
 
 		<!-- 소스 코드의 루프 패스를 지정 --> 
 	  	<sourceDirectory>${basedir}/src</sourceDirectory>

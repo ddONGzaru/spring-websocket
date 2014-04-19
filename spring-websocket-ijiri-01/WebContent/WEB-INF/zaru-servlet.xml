@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+</beans>
+
+<!-- 
+	[Could not open ServletContext resource] 에러 방지용 더미 설정파일입니다  
+	관련 설정파일은 classpath:com.epapyrus.gateway.common.conf.spring폴더에서 확인하세요.
+-->
