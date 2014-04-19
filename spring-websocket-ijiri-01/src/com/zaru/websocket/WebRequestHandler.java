@@ -14,7 +14,7 @@ public class WebRequestHandler {
 	@Resource
 	private ApplicationContext applicationContext;
 	
-	@RequestMapping(value = "/event/web", method = RequestMethod.GET)
+	@RequestMapping(value = "/webEvent", method = RequestMethod.GET)
 	public String handle(HttpSession session) {
 		
 		
